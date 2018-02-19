@@ -4,11 +4,17 @@
     <title>MusicBuddy</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= form_tag :search, method: :get, class: "form-inline" do %>
+    <div class="form-group search-field">
+      <%= text_field_tag :q, "Search by zip...", class: "form-control" %>
+      <%= submit_tag "Locate", class: "btn btn-primary" %>
+    </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
