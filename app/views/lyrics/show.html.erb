@@ -1,5 +1,5 @@
 <div class="song">
   <div class="lyrics"><%= @song.lyrics %></div>
   <div class="copyright"><%= @song.copyright %></div>
-  <div class="url"><%= @song.lyrics_url %></div>
+  <div class="url"><%= link_to "View full lyrics", @song.lyrics_url %></div>
 </div>
