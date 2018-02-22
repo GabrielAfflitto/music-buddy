@@ -6,9 +6,9 @@ describe "User can look up song lyrics" do
       visit root_path
 
       fill_in :q, with: "eminem my name is"
-      click_on "Submit"
+      click_on "Search"
 
-      expect(current_path).to eq(results_path)
+      expect(current_path).to eq(search_path)
       within(".results") do
         expect(page).to have_css(".track-name")
         expect(page).to have_css(".album-name")
@@ -20,7 +20,10 @@ describe "User can look up song lyrics" do
       end
 
       expect(current_path).to eq(lyrics_path)
-      expect(page).to have_content("slim shady")
+      expect(page).to have_content("Slim Shady")
+      expect(page).to have_css('.lyrics')
+      expect(page).to have_css('.copyright')
+      expect(page).to have_css('.url')
     end
   end
 end
