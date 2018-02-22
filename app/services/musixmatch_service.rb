@@ -9,15 +9,14 @@ class MusixmatchService
 
   def get_search_results
     results = get_json("track.search?q=#{text}&apikey=#{ENV['apikey']}")[:message][:body][:track_list]
-    # binding.pry
     results.map do |result|
       Result.new(result)
     end
   end
 
-  def get_lyrics(track)
-    lyrics = get_json("track.lyrics.get?track_id=#{track}&apikey=#{ENV['apikey']}")
-    # binding.pry
+  def get_lyrics
+    raw_lyrics = get_json("track.lyrics.get?track_id=#{text}&apikey=#{ENV['apikey']}")[:message][:body][:lyrics]
+    Lyrics.new(raw_lyrics)
   end
 
   def get_json(url)
