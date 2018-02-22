@@ -1,0 +1,10 @@
+<div class="results">
+  <% @results.each do |result| %>
+  <div class="result">
+    <div class="track-name"><%= result.track %></div>
+    <div class="artist-name"><%= result.artist %></div>
+    <div class="album-name"><%= result.album %></div>
+    <%= link_to "Lyrics", lyrics_path(track: result.track_id) %>
+  </div>
+  <% end %>
+</div>
