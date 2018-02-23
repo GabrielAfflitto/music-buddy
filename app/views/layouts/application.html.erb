@@ -18,6 +18,12 @@
         <%= submit_tag "Search", class: "btn btn-dark", style: "background-color: #4B4C4F;" %>
       </div>
       <% end %>
+      <% if current_user %>
+        Signed in as <%= current_user.name %>
+        <%= link_to "Sign out", signout_path, class: "navbar-brand" %>
+      <% else %>
+        <%= link_to "Sign in with Google", "/auth/google_oauth2", class: "navbar-brand" %>
+      <% end %>
       <%= link_to "Home", root_path, class:"navbar-brand" %>
     </nav>
     <%= yield %>
