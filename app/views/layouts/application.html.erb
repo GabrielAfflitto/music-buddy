@@ -15,7 +15,7 @@
       <%= form_tag :search, method: :get, class: "form-inline" do %>
       <div class="form-group search-field">
         <%= text_field_tag :q, "Search", class: "form-control" %>
-        <%= submit_tag "Search", class: "btn", style: "background-color: #4B4C4F;" %>
+        <%= submit_tag "Search", class: "btn btn-dark", style: "background-color: #4B4C4F;" %>
       </div>
       <% end %>
       <%= link_to "Home", root_path, class:"navbar-brand" %>

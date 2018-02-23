@@ -1,10 +1,15 @@
-<div class="results">
-  <% @results.each do |result| %>
-  <div class="result">
-    <div class="track-name"><%= result.track %></div>
-    <div class="artist-name"><%= result.artist %></div>
-    <div class="album-name"><%= result.album %></div>
-    <%= link_to "Lyrics", lyrics_path(track: result.track_id) %>
+  <div class="results">
+    <h1 class="search">Search Results</h1>
+    <% @results.each do |result| %>
+    <div class="result">
+      <div class="card w-50">
+        <div class="card-block">
+          <p class="card-text"><div class="artist-name"><%= result.artist %></div></p>
+          <h3 class="card-title"><div class="track-name"><%= result.track %></div></h3>
+          <h5 class="card-text"><div class="album-name"><%= result.album %></div></h5>
+          <%= link_to "Lyrics", lyrics_path(track: result.track_id), class: "btn btn-default" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
