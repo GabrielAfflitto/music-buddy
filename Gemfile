@@ -24,6 +24,8 @@ group :development, :test do
   gem 'launchy'
   gem 'capybara'
   gem 'rspec-rails'
+  gem 'simplecov'
+  gem 'factory_bot_rails'
 end
 
 group :development do
