@@ -20,12 +20,12 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry'
   gem 'launchy'
   gem 'capybara'
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'factory_bot_rails'
+  gem 'pry'
 end
 
 group :development do
