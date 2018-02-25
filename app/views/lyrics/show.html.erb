@@ -11,5 +11,6 @@
     <br>
     <div class="copyright"><h5> <%= @song.copyright %></h5></div>
     <div class="url"><h5> <%= link_to "View full lyrics", @song.lyrics_url %></h5></div>
+    <iframe src='https://www.youtube.com/embed/GoEl2Oo66IY?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
   </div>
 </div>
