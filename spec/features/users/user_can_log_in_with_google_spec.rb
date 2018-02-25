@@ -20,11 +20,14 @@ RSpec.feature "user can log in with google oauth" do
     stub_omniauth
   end
 
-  it "it should allow user to log in" do
+  it "it should allow user to log in and log out" do
     visit root_path
     expect(page).to have_content("Sign in with Google")
     click_on "Sign in with Google"
     expect(page).to have_content("Signed in as Gabriel Afflitto")
     expect(page).to have_content("Sign out")
+
+    click_on "Sign out"
+    expect(page).to have_content("Sign in with Google")
   end
 end
