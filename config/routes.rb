@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/search', to: 'search#index'
   get '/lyrics', to: 'lyrics#show'
+  get '/artist', to: 'artist#show'
 end
