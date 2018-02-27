@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180223042648) do
+ActiveRecord::Schema.define(version: 20180227205731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "lyrics_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "uid"
@@ -23,4 +29,5 @@ ActiveRecord::Schema.define(version: 20180223042648) do
     t.datetime "token_expiration"
   end
 
+  add_foreign_key "favorites", "users"
 end
