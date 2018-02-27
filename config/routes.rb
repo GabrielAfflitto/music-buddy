@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   get '/lyrics', to: 'lyrics#show'
   get '/artist', to: 'artist#show'
 
-  resources :favorites, only: [:index, :create]
+  resources :users, only: [:show] do
+    resources :favorites, only: [:index, :create]
+  end
 end
