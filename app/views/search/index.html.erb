@@ -7,7 +7,7 @@
           <p class="card-text"><div class="artist-name"><%= result.artist %></div></p>
           <h3 class="card-title"><div class="track-name"><%= result.track %></div></h3>
           <h5 class="card-text"><div class="album-name"><%= result.album %></div></h5>
-          <%= link_to "Lyrics", lyrics_path(track: result.track_id), class: "btn btn-default" %>
+          <%= link_to "Lyrics", lyrics_path(track: result.track_id, artist: result.artist), class: "btn btn-default" %>
         </div>
       </div>
     </div>
