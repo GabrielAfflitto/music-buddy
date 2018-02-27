@@ -27,6 +27,11 @@
       <% end %>
       <%= link_to "Home", root_path, class:"navbar-brand" %>
     </nav>
+    <% if flash[:notice] %>
+      <div class="alert alert-info">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
