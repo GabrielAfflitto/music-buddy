@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :favorites
   def self.from_omniauth(auth)
     user = User.find_by(uid: auth[:uid]) || User.new
     user.attributes = {provider: auth[:provider],
