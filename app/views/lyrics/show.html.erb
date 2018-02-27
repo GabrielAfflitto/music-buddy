@@ -11,7 +11,9 @@
     <br>
     <div class="copyright"><h5> <%= @song.copyright %></h5></div>
     <%= link_to "Artist Info", artist_path(artist: params[:artist]) %>
-    <%= link_to "Favorite", favorites_path(track_id: @song.lyrics_id), method: :post, class: "badge badge-primary" %></center>
+    <% if current_user %>
+      <%= link_to "Favorite", user_favorites_path(user_id: current_user.id, track_id: @song.lyrics_id), method: :post, class: "badge badge-primary" %></center>
+    <% end %>
     <div class="url"><h5> <%= link_to "View full lyrics", @song.lyrics_url %></h5></div>
     <iframe  width="640" height="390" src='https://www.youtube.com/embed/GoEl2Oo66IY?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
   </div>
