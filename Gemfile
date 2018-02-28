@@ -26,6 +26,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'factory_bot_rails'
   gem 'pry'
+  gem 'rspec-html-matchers'
 end
 
 group :development do
