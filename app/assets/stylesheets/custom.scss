@@ -54,3 +54,18 @@ body, html {
 .btn:hover {
   background: #eee;
 }
+
+.song {
+  background-image: image-url("dayne-topkin-60559-unsplash.jpg");
+  background-size: cover;
+}
+
+.favorites {
+  background-image: image-url("travis-yewell-273488-unsplash.jpg");
+  background-size: cover;
+  padding: 50px;
+}
+
+#band {
+  background-color: white;
+}
