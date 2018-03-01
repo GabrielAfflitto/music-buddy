@@ -21,6 +21,7 @@
       <% end %>
       <% if current_user %>
         Signed in as <%= current_user.name %>
+        <%= link_to "Dashboard", dashboard_path(user_id: current_user.id), class: "navbar-brand" %>
         <%= link_to "Sign out", signout_path, class: "navbar-brand" %>
       <% else %>
         <%= link_to "Sign in with Google", "/auth/google_oauth2", class: "navbar-brand" %>
