@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#show'
 
   resources :users, only: [:show] do
-    resources :favorites, only: [:index, :create]
+    resources :favorites, only: [:index, :create, :destroy]
   end
 end
