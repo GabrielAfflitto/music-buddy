@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/search', to: 'search#index'
   get '/lyrics', to: 'lyrics#show'
   get '/artist', to: 'artist#show'
+  get '/dashboard', to: 'users#show'
 
   resources :users, only: [:show] do
     resources :favorites, only: [:index, :create]

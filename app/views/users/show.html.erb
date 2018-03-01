@@ -1,0 +1,14 @@
+<div class="favorites">
+  <h1 class="search">Saved Lyrics for <%= current_user.name %></h1>
+  <% @user.favorites.each do |favorite| %>
+  <div class="result">
+    <div class="card w-50">
+      <div class="card-block">
+        <p class="card-text"><div class="artist-name"><%= favorite.artist %></div></p>
+        <h3 class="card-title"><div class="track-name"></div><%= favorite.track %></h3>
+        <%= link_to "Lyrics", lyrics_path(track: favorite.lyrics_id, artist: favorite.artist, track_name: favorite.track), class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
